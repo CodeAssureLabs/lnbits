@@ -324,6 +324,7 @@ def normalize_path(path: str | None) -> str:
 
 
 def normalize_endpoint(endpoint: str, add_proto=True) -> str:
+    endpoint = endpoint.strip()
     endpoint = endpoint[:-1] if endpoint.endswith("/") else endpoint
     if add_proto:
         if endpoint.startswith("ws://") or endpoint.startswith("wss://"):
